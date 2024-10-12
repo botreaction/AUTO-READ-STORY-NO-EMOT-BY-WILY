@@ -1,20 +1,20 @@
 {
-  "name": "nodejs",
+  "name": "tes",
   "version": "1.0.0",
-  "description": "",
-  "main": "node index.js --pairing-code",
+  "description": "Penambahan Fitur By Wily :V",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js --pairing-code"
   },
   "keywords": [],
-  "author": "",
+  "author": "Wily",
   "license": "ISC",
   "dependencies": {
-    "@hapi/boom": "^10.0.1",
-    "@types/node": "^18.0.6",
-    "@whiskeysockets/baileys": "^6.7.8",
-    "cfonts": "^3.3.0",
-    "lodash": "^4.17.21",
-    "pino": "^9.4.0"
+    "@whiskeysockets/baileys": "latest",
+    "@hapi/boom": "latest",
+    "@types/node": "latest",    
+    "cfonts": "latest",
+    "lodash": "latest",
+    "pino": "latest"
   }
 }
