@@ -26,6 +26,21 @@ function randomColor() {
   return colors[random(0, colors.length - 1)];
 }
 
+// Fungsi untuk menampilkan teks dengan warna
+function colorText(text, color) {
+  let colorCode = {
+    'red': '\x1b[31m',
+    'green': '\x1b[32m',
+    'yellow': '\x1b[33m',
+    'blue': '\x1b[34m',
+    'magenta': '\x1b[35m',
+    'cyan': '\x1b[36m',
+    'white': '\x1b[37m',
+  }[color];
+
+  return `${colorCode}${text}\x1b[0m`; // Reset warna
+}
+
 async function WAStart() {
   try {
     const { state, saveCreds } = await useMultiFileAuthState("./sesi");
@@ -48,9 +63,9 @@ async function WAStart() {
 
     // Tampilkan daftar fitur dengan status aktif/tidak aktif
     console.log("---------- Daftar Fitur ----------");
-    console.log("1. Auto Read Status: " + (settings.autoReadStory ? "Aktif" : "Tidak Aktif"));
-    console.log("2. Auto Typing: " + (settings.autoTyping ? "Aktif" : "Tidak Aktif"));
-    console.log("3. Update Bio (Aktif Selama Uptime): " + (settings.bioActive ? "Aktif" : "Tidak Aktif"));
+    console.log(colorText("1. Auto Read Status: ", 'blue') + (settings.autoReadStory ? colorText("✅ Aktif", 'green') : colorText("❌ Tidak Aktif", 'red')));
+    console.log(colorText("2. Auto Typing: ", 'blue') + (settings.autoTyping ? colorText("✅ Aktif", 'green') : colorText("❌ Tidak Aktif", 'red')));
+    console.log(colorText("3. Update Bio (Aktif Selama Uptime): ", 'blue') + (settings.bioActive ? colorText("✅ Aktif", 'green') : colorText("❌ Tidak Aktif", 'red')));
     console.log("----------------------------------"); // Garis pemisah dengan panjang sama
 
     // Sekarang tampilkan versi WA setelah daftar fitur
