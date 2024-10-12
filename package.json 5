@@ -1,0 +1,18 @@
+{
+  "name": "auto-read-sw",
+  "version": "1.0.0",
+  "description": "A WhatsApp bot for automatically reading statuses and deleting status updates.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js --pairing-cose"
+  },
+  "author": "wily-kun",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/boom": "latest",
+    "@whiskeysockets/baileys": "latest",
+    "cfonts": "latest",
+    "lodash": "latest",
+    "pino": "latest"
+  }
+}
