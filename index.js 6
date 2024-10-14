@@ -293,9 +293,15 @@ async function WAStart() {
             // Hitung level dan nama level
             const level = calculateLevel(statusData[username] || 0);
             const levelName = getLevelName(level);
+            const nextLevelExp = calculateNextLevelExp(level + 1); // Hitung exp untuk level selanjutnya
+
+            // Tampilkan notifikasi naik level
+            if (statusData[username] >= nextLevelExp) {
+              console.log(colorText(`🎉 Selamat! ${username} telah naik level ke ${getLevelName(level + 1)}! 🎉`, 'green'));
+            }
 
             console.log(colorText("AUTO LIHAT STATUS ✅", 'blue'), username, `(Level ${levelName} 🏆, Level ${level})`); // Warna biru
-            console.log("----------------------------------"); // Garis pemisah
+            console.log("----------------------------------".substring(0, "AUTO LIHAT STATUS ✅".length + username.length + `(Level ${levelName} 🏆, Level ${level})`.length + 1)); // Garis pemisah
           }
 
           // Increment counter for this user
